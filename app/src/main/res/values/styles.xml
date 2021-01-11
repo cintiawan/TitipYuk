@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/AppTextViewStyle</item>
+        <item name="buttonStyle">@style/AppButtonStyle</item>
+        <item name="editTextStyle">@style/AppEditTextStyle</item>
+        <item name="autoCompleteTextViewStyle">@style/AppAutocompleteStyle</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- SPLASH -->
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <!-- INTRO -->
+    <style name="IntroTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="IntroTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="IntroTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- STORY -->
+    <style name="StoryTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen">
+        <item name="android:windowAnimationStyle">@style/StoryAnimation.Window</item>
+    </style>
+    <style name="StoryAnimation.Window" parent="@android:style/Animation.Activity">
+        <!--<item name="android:windowEnterAnimation">@anim/story_in</item>-->
+        <item name="android:windowExitAnimation">@anim/story_out</item>
+    </style>
+
+    <!-- FULL IMAGE -->
+    <style name="FullImageTheme" parent="AppTheme">
+        <item name="android:homeAsUpIndicator">@drawable/ic_back_white</item>
+    </style>
+
+    <!-- TIMELINE BUTTON -->
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- WIDGETS -->
+    <style name="AppTextViewStyle" parent="android:Widget.TextView">
+    </style>
+    <style name="AppButtonStyle" parent="android:Widget.Holo.Button">
+    </style>
+    <style name="AppEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+    <style name="AppAutocompleteStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_bottom_sheet</item>
+    </style>
+
+    <!-- RATING BAR -->
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorLightGrey</item>
+    </style>
+
+    <!-- IMAGE PICKER -->
+    <style name="ImagePickerTheme" parent="ef_BaseTheme">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>

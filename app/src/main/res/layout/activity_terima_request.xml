@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.request.accept.TerimaRequestViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.trip.post.PostTripActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorWhite" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="@dimen/circle_image_small"
+                        android:layout_height="@dimen/circle_image_small"
+                        android:layout_margin="@dimen/circle_image_margin"
+                        android:src="@drawable/placeholder" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Evin Cintiawan"
+                        android:textStyle="bold"
+                        android:textAllCaps="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="@dimen/circle_image_medium"
+                        android:layout_height="@dimen/circle_image_medium"
+                        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                        android:layout_gravity="center_horizontal"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:src="@drawable/placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aloe Vera asdas dasdasdasdasdasdasd"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textStyle="bold" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="@dimen/flag_image_width"
+                                android:layout_height="@dimen/flag_image_height"
+                                android:layout_marginEnd="@dimen/flag_image_margin"
+                                android:contentDescription="@string/app_name"
+                                android:background="@drawable/border_solid" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Thailand"
+                                android:maxLines="1"
+                                android:ellipsize="end" />
+                        </LinearLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rp 500.000"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorAccentDark" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 Pcs" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/medium"
+                    android:layout_marginBottom="@dimen/medium"
+                    android:background="@color/colorLightGrey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium"
+                    android:text="Tanggal Keberangkatan"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorTertiary" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:hint="dd/mm/yyyy">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium"
+                    android:text="Tanggal Kembali"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorTertiary" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:hint="dd/mm/yyyy">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium"
+                    android:text="Tanggal Penawaran Ditutup"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorTertiary" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:hint="dd/mm/yyyy">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium"
+                    android:text="Dikirim Dari"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorTertiary" />
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:hint="cth: Samarinda, Medan, Makassar, ..." />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium"
+                    android:text="Estimasi Tanggal Pengiriman Barang"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorTertiary" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/medium"
+                    android:layout_marginEnd="@dimen/medium"
+                    android:hint="dd/mm/yyyy">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGrey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableStart="@drawable/ic_tick_green"
+                android:text="Kirim Penawaran"
+                android:textColor="@color/colorGrey" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

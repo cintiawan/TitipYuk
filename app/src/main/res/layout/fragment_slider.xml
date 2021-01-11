@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.slider.SliderFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.slider.SliderViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            mutableImage="@{viewModel.image}" />
+
+    </FrameLayout>
+
+</layout>

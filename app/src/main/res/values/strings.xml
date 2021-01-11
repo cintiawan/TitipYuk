@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">Titip Yuk</string>
+
+    <!-- INTRO ACTIVITY -->
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">MENGERTI</string>
+    <string name="dot">&#8226;</string>
+    <string name="slide_1_title">Ayo titip Barang keinginanmu sekarang!</string>
+    <string name="slide_1_desc">Dengan Titip Yuk, Kamu bisa titip Barang dimana saja dan kapan saja</string>
+    <string name="slide_2_title">Easy, Simple, Safe</string>
+    <string name="slide_2_desc">Dengan Titip Yuk, titip Barang sekarang jauh lebih mudah</string>
+    <string name="slide_3_title">Travelling while making money? Why not?</string>
+    <string name="slide_3_desc">Dengan Titip Yuk, Travellingmu bisa menjadi penghasilanmu</string>
+    <string name="slide_4_title">Ciptakan peluangmu sendiri dengan menjadi Personal Shopper</string>
+    <string name="slide_4_desc">Bangun karirmu bersama Titip Yuk</string>
+
+    <!-- TITLE BARS -->
+    <string name="titlebar_timeline">TIMELINE</string>
+    <string name="titlebar_post">POST</string>
+    <string name="titlebar_notifikasi">NOTIFIKASI</string>
+    <string name="titlebar_saya">PROFIL SAYA</string>
+
+    <!-- TOOLBAR MENU -->
+    <string name="toolbar_box_titipan">Box Titipanku</string>
+    <string name="toolbar_history_chat">History Chat</string>
+    <string name="toolbar_search">Pencarian</string>
+    <string name="toolbar_filter_sort">Filter atau Urutkan</string>
+    <string name="toolbar_report">Laporkan</string>
+    <string name="toolbar_like">Like</string>
+    <string name="toolbar_user_setting">Setting Akun</string>
+
+    <!-- BERANDA -->
+    <string name="beranda">Beranda</string>
+    <string name="timeline">Timeline</string>
+    <string name="post">POST</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="saya">Saya</string>
+    <string name="search_hint"><font size="15">Cari produk atau Personal Shopper</font></string>
+    <string name="beranda_preorder">Pre Order Terbaru</string>
+    <string name="beranda_request">Request Terbaru</string>
+    <string name="beranda_trip">Trip Terbaru</string>
+    <string name="beranda_negara">Kota / Negara</string>
+    <string name="lihat_semua">Lihat Semua &#8250;</string>
+    <string name="trip_ke">&#9658;</string>
+
+    <!-- TIMELINE -->
+    <string name="like"><font size="16">Like</font></string>
+    <string name="komentar"><font size="16">Komentar</font></string>
+    <string name="share"><font size="16">Share</font></string>
+
+    <!-- LIST -->
+    <string name="preorder">Pre Order</string>
+    <string name="preorder_title">Pre Order Terbaru</string>
+    <string name="request">Request</string>
+    <string name="request_title">Request Terbaru</string>
+    <string name="trip">Trip</string>
+    <string name="trip_title">Trip Terbaru</string>
+
+    <!-- STORY -->
+    <string name="swipe_up">^</string>
+    <string name="lihat_detail">Lihat Detail</string>
+
+    <!-- DETAIL -->
+    <string name="preorder_tutup">Pre Order Ditutup :</string>
+    <string name="personal_shopper">Personal Shopper</string>
+    <string name="penitip">Penitip</string>
+    <string name="rincian_produk">Rincian Produk</string>
+    <string name="rincian_request">Rincian Request</string>
+    <string name="rincian_trip">Rincian Trip</string>
+    <string name="penilaian">Penilaian</string>
+    <string name="pengikut">Pengikut</string>
+    <string name="titipan">Titipan</string>
+    <string name="dibelikan_dari">Dibelikan Dari :</string>
+    <string name="dikirim_dari">Dikirim Dari :</string>
+    <string name="stok">Stok :</string>
+    <string name="berat_barang">Berat Barang :</string>
+    <string name="kategori">Kategori :</string>
+    <string name="penilaian_personal_shopper">Penilaian Shopper</string>
+    <string name="pergi">Kepergian</string>
+    <string name="pulang">Kepulangan</string>
+    <string name="pengiriman">Pengiriman</string>
+    <string name="chat_personal_shopper">Chat</string>
+    <string name="titip_personal_shopper">Titip</string>
+    <string name="request_personal_shopper">Request</string>
+    <string name="chat_penitip">Chat</string>
+    <string name="terima_penitip">Terima</string>
+
+    <!-- AUTH -->
+    <string name="login_register">Login / Register</string>
+    <string name="notifikasi_alert">Silahkan Login / Register terlebih dahulu</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Nama Lengkap</string>
+    <string name="hint_phone_number">Nomor HP</string>
+    <string name="hint_password_confirm">Konfirmasi Password</string>
+    <string name="hint_address">Alamat</string>
+    <string name="register">Register</string>
+    <string name="eula_title">Dengan melakukan registrasi, saya menyetujui :</string>
+    <string name="eula_sk">Syarat dan Ketentuan</string>
+    <string name="eula_separator">\tdan\t</string>
+    <string name="eula_kebijakan_privasi">Kebijakan Privasi</string>
+
+    <!-- USER -->
+    <string name="follower">Followers</string>
+    <string name="following">Following</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="tentang_saya">Tentang Saya :</string>
+
+    <!-- SETTING -->
+    <string name="konfirmasi">Konfirmasi</string>
+    <string name="hint_new_password">Password Baru</string>
+    <string name="hint_new_password_confirm">Konfirmasi Password Baru</string>
+    <string name="ganti_password">Ganti Password</string>
+
+    <!-- POST -->
+    <string name="kota_hint">cth: Jakarta, Sydney, Osaka, ...</string>
+    <string name="kota_ongkir_hint">cth: Surabaya, Makassar, Palembang, ...</string>
+    <string name="kategori_hint">cth: Makanan, Rumah Tangga, Mainan, Lainnya ...</string>
+    <string name="tanggal_hint">DD/MM/YYYY</string>
+
+    <!-- FACEBOOK -->
+    <string name="facebook_app_id">383026835797061</string>
+    <string name="fb_login_protocol_scheme">fb383026835797061</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisi nibh, mollis sed libero sed, condimentum suscipit velit. Phasellus fermentum risus quam, at blandit sapien commodo a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in hendrerit augue. Aliquam sed ligula sit amet felis feugiat lacinia sed non turpis. Cras tristique luctus metus, vel iaculis lorem posuere vitae. Suspendisse potenti.</string>
+    <string name="error">Mohon maaf, telah terjadi kesalahan</string>
+    <string name="ok">Oke</string>
+</resources>

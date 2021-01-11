@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.request.post.PostRequestViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/super_large"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            mutableRetryVisibility="@{viewModel.stateInit}">
+            <ImageView
+                android:layout_width="@dimen/circle_image"
+                android:layout_height="@dimen/circle_image"
+                android:layout_marginBottom="@dimen/medium"
+                android:src="@drawable/error_layout"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorGrey"
+                mutableText="@{viewModel.errorMessageInit}" />
+            <Button
+                android:id="@+id/btn_retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:text="Coba Lagi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            mutableContentVisibility="@{viewModel.stateInit}">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorWhite" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layout_img_prev"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+                            <FrameLayout
+                                android:layout_width="@dimen/circle_image_medium"
+                                android:layout_height="@dimen/circle_image_medium"
+                                android:layout_margin="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:background="@drawable/border_dashed"
+                                android:gravity="center">
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_width="@dimen/circle_image_medium"
+                                android:layout_height="@dimen/circle_image_medium"
+                                android:layout_margin="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:background="@drawable/border_dashed"
+                                android:gravity="center">
+                            </FrameLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/layout_tambah_gambar"
+                            android:layout_width="@dimen/circle_image"
+                            android:layout_height="@dimen/circle_image"
+                            android:layout_margin="@dimen/medium"
+                            android:layout_gravity="center"
+                            android:background="@drawable/border_dashed"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:drawableTop="@drawable/ic_add"
+                                android:text="Tambah Gambar Produk" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
+                            <FrameLayout
+                                android:layout_width="@dimen/circle_image_medium"
+                                android:layout_height="@dimen/circle_image_medium"
+                                android:layout_margin="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:background="@drawable/border_dashed"
+                                android:gravity="center">
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_width="@dimen/circle_image_medium"
+                                android:layout_height="@dimen/circle_image_medium"
+                                android:layout_margin="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:background="@drawable/border_dashed"
+                                android:gravity="center">
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_img_after"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:id="@+id/img_dua"
+                                    android:layout_width="@dimen/circle_image_medium"
+                                    android:layout_height="@dimen/circle_image_medium"
+                                    android:layout_margin="@dimen/medium"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/border_solid"
+                                    android:scaleType="centerCrop"
+                                    android:gravity="center"
+                                    tools:ignore="ContentDescription"
+                                    mutableImagePath="@{viewModel.gambar2Path}" />
+                                <ImageView
+                                    android:id="@+id/img_tiga"
+                                    android:layout_width="@dimen/circle_image_medium"
+                                    android:layout_height="@dimen/circle_image_medium"
+                                    android:layout_margin="@dimen/medium"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/border_solid"
+                                    android:scaleType="centerCrop"
+                                    android:gravity="center"
+                                    tools:ignore="ContentDescription"
+                                    mutableImagePath="@{viewModel.gambar3Path}" />
+                            </LinearLayout>
+                            <ImageView
+                                android:id="@+id/img_satu"
+                                android:layout_width="@dimen/circle_image"
+                                android:layout_height="@dimen/circle_image"
+                                android:layout_margin="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:background="@drawable/border_solid"
+                                android:scaleType="centerCrop"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                tools:ignore="ContentDescription"
+                                mutableImagePath="@{viewModel.gambar1Path}" />
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical">
+                                <ImageView
+                                    android:id="@+id/img_empat"
+                                    android:layout_width="@dimen/circle_image_medium"
+                                    android:layout_height="@dimen/circle_image_medium"
+                                    android:layout_margin="@dimen/medium"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/border_solid"
+                                    android:scaleType="centerCrop"
+                                    android:gravity="center"
+                                    tools:ignore="ContentDescription"
+                                    mutableImagePath="@{viewModel.gambar4Path}" />
+                                <ImageView
+                                    android:id="@+id/img_lima"
+                                    android:layout_width="@dimen/circle_image_medium"
+                                    android:layout_height="@dimen/circle_image_medium"
+                                    android:layout_margin="@dimen/medium"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/border_solid"
+                                    android:scaleType="centerCrop"
+                                    android:gravity="center"
+                                    tools:ignore="ContentDescription"
+                                    mutableImagePath="@{viewModel.gambar5Path}" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_tambah_gambar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/medium"
+                            android:layout_marginStart="@dimen/super_large"
+                            android:layout_marginEnd="@dimen/super_large"
+                            android:text="Ambil Ulang Gambar" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/medium"
+                        android:layout_marginBottom="@dimen/medium"
+                        android:background="@color/colorLightGrey" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium"
+                        app:cardCornerRadius="@dimen/card_radius">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/medium"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Nama Produk"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="cth: Action Figure Naruto, PS4 Hardisk 500GB, ..."
+                                app:boxBackgroundMode="outline"
+                                mutableErrorValidate="@{viewModel.namaError}">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_nama"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_pencil"
+                                    android:drawablePadding="@dimen/medium"
+                                    android:inputType="text" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Kategori Produk"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="@string/kategori_hint"
+                                app:boxBackgroundMode="outline">
+                                <AutoCompleteTextView
+                                    android:id="@+id/txt_kategori"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_category"
+                                    android:drawablePadding="@dimen/medium"
+                                    tools:ignore="LabelFor" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Dibeli Dari"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="@string/kota_hint"
+                                app:boxBackgroundMode="outline">
+                                <AutoCompleteTextView
+                                    android:id="@+id/txt_kota_asal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_airplane_2"
+                                    android:drawablePadding="@dimen/medium"
+                                    tools:ignore="LabelFor" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium"
+                        app:cardCornerRadius="@dimen/card_radius">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/medium"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Estimasi Harga"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="Nominal dalam Rupiah"
+                                app:boxBackgroundMode="outline"
+                                mutableErrorValidate="@{viewModel.hargaError}">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_harga"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_rupiah"
+                                    android:drawablePadding="@dimen/medium"
+                                    android:inputType="number"
+                                    mutableEditText="@{viewModel.hargaText}"
+                                    mutableEditSelection="@{viewModel.hargaSelection}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Jumlah"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="Jumlah Barang"
+                                app:boxBackgroundMode="outline"
+                                mutableErrorValidate="@{viewModel.jumlahError}">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_jumlah"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_numbers"
+                                    android:drawablePadding="@dimen/medium"
+                                    android:inputType="number" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium"
+                        app:cardCornerRadius="@dimen/card_radius">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/medium"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Dikirim Ke Alamat"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/medium"
+                                android:layout_gravity="center"
+                                android:text="Belum memilih alamat"
+                                android:textColor="@color/colorLightRed"
+                                mutableVisibility="@{viewModel.kotaBelumDipilih}" />
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/activity_horizontal_margin"
+                                android:visibility="gone"
+                                mutableVisibility="@{viewModel.kotaSudahDipilih}">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/medium"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/textColorTertiary"
+                                    android:textAllCaps="true"
+                                    mutableText="@{viewModel.kotaDikirimText}" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    mutableText="@{viewModel.alamatDikirimText}" />
+                            </LinearLayout>
+                            <Button
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:id="@+id/btn_pilih_alamat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:text="Pilih Alamat Saya"
+                                android:textColor="@color/colorGrey" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/medium"
+                        app:cardCornerRadius="@dimen/card_radius">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/medium"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Tanggal Request Ditutup"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="@string/tanggal_hint"
+                                app:boxBackgroundMode="outline"
+                                mutableErrorValidate="@{viewModel.tanggalDitutupError}">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_tanggal_ditutup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:drawableStart="@drawable/ic_calendar"
+                                    android:drawablePadding="@dimen/medium"
+                                    android:inputType="date"
+                                    mutableEditText="@{viewModel.tanggalDitutupText}"
+                                    mutableEditSelection="@{viewModel.tanggalDitutupSelection}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/medium"
+                                android:text="Deskripsi Request"
+                                android:textStyle="bold"
+                                android:textColor="@color/textColorTertiary" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/medium"
+                                android:layout_marginEnd="@dimen/medium"
+                                android:hint="Deskripsikan Request Anda"
+                                app:boxBackgroundMode="outline"
+                                mutableErrorValidate="@{viewModel.deskripsiError}">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_deskripsi"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingTop="@dimen/edittext_padding"
+                                    android:paddingStart="@dimen/small_medium"
+                                    android:paddingEnd="@dimen/small_medium"
+                                    android:paddingBottom="@dimen/edittext_padding"
+                                    android:inputType="textMultiLine"
+                                    android:gravity="top|start"
+                                    android:lines="12"
+                                    android:minLines="6"
+                                    android:maxLines="12"
+                                    android:scrollbars="vertical"
+                                    android:scrollbarStyle="insideInset"
+                                    android:overScrollMode="always" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_tick_white"
+                    android:text="Post Request"
+                    mutableEnable="@{viewModel.buttonEnable}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

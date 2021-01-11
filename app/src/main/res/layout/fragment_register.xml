@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.user.auth.RegisterViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.user.auth.RegisterFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:paddingTop="@dimen/very_large"
+                android:paddingStart="@dimen/edittext_margin"
+                android:paddingEnd="@dimen/edittext_margin"
+                android:gravity="center_horizontal|top"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_email"
+                    app:boxBackgroundMode="outline"
+                    mutableErrorValidate="@{viewModel.emailError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/small_medium"
+                        android:paddingEnd="@dimen/small_medium"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_name"
+                    app:boxBackgroundMode="outline"
+                    mutableErrorValidate="@{viewModel.nameError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/small_medium"
+                        android:paddingEnd="@dimen/small_medium"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_phone_number"
+                    app:boxBackgroundMode="outline"
+                    mutableErrorValidate="@{viewModel.phoneNumberError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_telepon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/small_medium"
+                        android:paddingEnd="@dimen/small_medium"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_password"
+                    app:boxBackgroundMode="outline"
+                    mutableErrorValidate="@{viewModel.passwordError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/small_medium"
+                        android:paddingEnd="@dimen/small_medium"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_password_confirm"
+                    app:boxBackgroundMode="outline"
+                    mutableErrorValidate="@{viewModel.passwordConfError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_password_konfirmasi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/small_medium"
+                        android:paddingEnd="@dimen/small_medium"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_registrasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register"
+                    mutableEnable="@{viewModel.buttonEnable}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/edittext_margin"
+                android:paddingEnd="@dimen/edittext_margin"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/eula_title"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/large"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/eula_sk"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccentDark"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" dan " />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/eula_kebijakan_privasi"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccentDark"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="xyz.cintiawan.titipyuk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".base.BaseApp"
+        android:allowBackup="true"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.chat.ChatChannelActivity" />
+        <activity android:name=".ui.chat.LatestChatActivity" />
+        <activity android:name=".ui.trip.detail.confirm.TripConfirmActivity" />
+        <activity android:name=".ui.alamat.post.PostAlamatActivity" />
+        <activity android:name=".ui.alamat.SettingAlamatActivity" />
+        <activity android:name=".ui.request.story.StoryRequestActivity" />
+        <activity android:name=".ui.preorder.story.StoryPreOrderActivity" />
+        <activity android:name=".ui.slider.ImageFullActivity" />
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/IntroTheme" />
+        <activity
+            android:name=".ui.list.ListActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.preorder.detail.PreOrderDetailActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.request.detail.RequestDetailActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.trip.detail.TripDetailActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.user.auth.AuthActivity" />
+        <activity android:name=".ui.titipan.list.TitipanUserListActivity" />
+        <activity android:name=".ui.preorder.list.PreOrderVerticalListActivity" />
+        <activity android:name=".ui.trip.list.TripVerticalListActivity" />
+        <activity android:name=".ui.request.list.RequestVerticalListActivity" />
+        <activity android:name=".ui.review.list.ReviewUserListActivity" />
+        <activity android:name=".ui.user.profile.setting.UserSettingActivity" />
+        <activity android:name=".ui.user.info.UserInfoActivity" />
+        <activity android:name=".ui.user.profile.setting.SettingPasswordActivity" />
+        <activity android:name=".ui.user.profile.setting.SettingProfileActivity" />
+        <activity android:name=".ui.user.profile.setting.SettingRekeningActivity" />
+        <activity android:name=".ui.user.profile.setting.SettingPengaturanActivity" />
+        <activity android:name=".ui.titipan.detail.TitipanDetailActivity" />
+        <activity android:name=".ui.list.WishlistActivity" />
+        <activity android:name=".ui.request.verifikasi.VerifikasiRequestActivity" />
+        <activity android:name=".ui.preorder.verifikasi.VerifikasiPreOrderActivity" />
+        <activity android:name=".ui.trip.verifikasi.VerifikasiTripActivity" />
+        <activity android:name=".ui.request.post.PostRequestActivity" />
+        <activity android:name=".ui.preorder.post.PostPreOrderActivity" />
+        <activity android:name=".ui.trip.post.PostTripActivity" />
+        <activity android:name=".ui.request.accept.TerimaRequestActivity" />
+        <activity android:name=".ui.titipan.box.BoxTitipanActivity" />
+        <activity android:name=".ui.promo.PromoDetailActivity" />
+        <activity android:name=".ui.user.auth.RedirectActivity" />
+        <activity android:name=".ui.kategori.KategoriListActivity" />
+    </application>
+
+</manifest>

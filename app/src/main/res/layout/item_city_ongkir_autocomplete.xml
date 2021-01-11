@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.city.item.ItemCityOngkirAutocompleteViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/medium"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/medium"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txt_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            mutableText="@{viewModel.cityName}" />
+
+        <TextView
+            android:id="@+id/txt_city_province"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mutableText="@{viewModel.province}" />
+
+    </LinearLayout>
+
+</layout>

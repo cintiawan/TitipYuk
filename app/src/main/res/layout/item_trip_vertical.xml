@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.trip.item.ItemTripViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/lyt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/circle_image_medium"
+                android:layout_height="@dimen/circle_image_medium"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/colorAccent"
+                mutableUserImage="@{viewModel.userImage}" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person_circle"
+                    android:drawablePadding="@dimen/medium"
+                    android:textStyle="bold"
+                    mutableText="@{viewModel.userName}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_airplane"
+                    android:drawablePadding="@dimen/medium"
+                    android:textStyle="bold"
+                    mutableText="@{viewModel.tripName}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/medium"
+                    android:maxLines="1"
+                    mutableText="@{viewModel.tripDepart}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_calendar"
+                    android:drawablePadding="@dimen/medium"
+                    android:maxLines="1"
+                    mutableText="@{viewModel.tripReturn}" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_right"
+                android:contentDescription="@null" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/medium"
+            android:layout_gravity="bottom"
+            android:background="@color/colorLightGrey" />
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.alamat.item.ItemAlamatViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lyt_alamat"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium"
+            android:textStyle="bold"
+            android:textColor="@color/textColorTertiary"
+            android:textAllCaps="true"
+            mutableText="@{viewModel.kota}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            mutableText="@{viewModel.alamat}" />
+
+    </LinearLayout>
+
+</layout>

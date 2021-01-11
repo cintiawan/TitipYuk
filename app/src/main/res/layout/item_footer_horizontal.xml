@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<com.wang.avi.AVLoadingIndicatorView-->
+        <!--android:id="@+id/progress_bar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--app:indicatorName="BallClipRotateIndicator"-->
+        <!--app:indicatorColor="@color/colorAccent"-->
+        <!--style="@style/AVLoadingIndicatorView" />-->
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_retry"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

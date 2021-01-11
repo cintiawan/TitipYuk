@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.trip.detail.TripDetailViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            mutableLoadingVisibility="@{viewModel.state}" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/super_large"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            mutableRetryVisibility="@{viewModel.state}">
+            <ImageView
+                android:layout_width="@dimen/circle_image"
+                android:layout_height="@dimen/circle_image"
+                android:layout_marginBottom="@dimen/medium"
+                android:src="@drawable/error_layout"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/medium_text"
+                android:textColor="@color/colorGrey"
+                mutableText="@{viewModel.errorMessage}" />
+            <Button
+                android:id="@+id/btn_retry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium"
+                android:text="Coba Lagi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.trip.detail.TripDetailActivity"
+            mutableContentVisibility="@{viewModel.state}">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorWhite" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/activity_horizontal_margin">
+                            <LinearLayout
+                                android:id="@+id/body_personal_shopper"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/title_personal_shopper"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="@dimen/circle_image_small"
+                                    android:layout_height="@dimen/circle_image_small"
+                                    android:layout_margin="@dimen/circle_image_margin"
+                                    mutableUserImage="@{viewModel.userImage}" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        mutableText="@{viewModel.userName}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        mutableText="@{viewModel.userLastOnline}" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/body_personal_shopper"
+                                android:layout_centerHorizontal="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/large"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableStart="@drawable/ic_star_yellow"
+                                        android:drawablePadding="@dimen/medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/detail_text"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.userRating}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/penilaian"
+                                        android:textAlignment="center" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/large"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableStart="@drawable/ic_follower"
+                                        android:drawablePadding="@dimen/medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/detail_text"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.userFollowers}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pengikut"
+                                        android:textAlignment="center" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/large"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableStart="@drawable/ic_tick_green"
+                                        android:drawablePadding="@dimen/medium"
+                                        android:textStyle="bold"
+                                        android:textSize="@dimen/detail_text"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.userTitipan}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/titipan"
+                                        android:textAlignment="center" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/activity_horizontal_margin">
+                            <TextView
+                                android:id="@+id/title_trip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                                android:text="@string/trip"
+                                android:textStyle="bold"
+                                android:textAllCaps="true" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="@dimen/flag_large_image_width"
+                                        android:layout_height="@dimen/flag_large_image_height"
+                                        android:scaleType="centerCrop"
+                                        android:contentDescription="@null"
+                                        android:background="@drawable/border_solid"
+                                        mutableImage="@{viewModel.flagFrom}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        mutableText="@{viewModel.from}" />
+                                </LinearLayout>
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/medium"
+                                    android:layout_marginEnd="@dimen/medium"
+                                    android:src="@drawable/ic_right"
+                                    android:contentDescription="@null" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+                                    <ImageView
+                                        android:layout_width="@dimen/flag_large_image_width"
+                                        android:layout_height="@dimen/flag_large_image_height"
+                                        android:scaleType="centerCrop"
+                                        android:contentDescription="@null"
+                                        android:background="@drawable/border_solid"
+                                        mutableImage="@{viewModel.flagTo}" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        mutableText="@{viewModel.to}" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:baselineAligned="false">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pergi"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold"/>
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:layout_marginTop="@dimen/small"
+                                        android:layout_marginBottom="@dimen/medium"
+                                        android:background="@color/colorLightGrey" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.dateDepart}" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pulang"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold"/>
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:layout_marginTop="@dimen/small"
+                                        android:layout_marginBottom="@dimen/medium"
+                                        android:background="@color/colorLightGrey" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.dateReturn}" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/pengiriman"
+                                        android:textAlignment="center"
+                                        android:textStyle="bold" />
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:layout_marginTop="@dimen/small"
+                                        android:layout_marginBottom="@dimen/medium"
+                                        android:background="@color/colorLightGrey" />
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/colorAccentDark"
+                                        mutableText="@{viewModel.dateSent}" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/activity_horizontal_margin">
+                            <TextView
+                                android:id="@+id/title_rincian_produk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                                android:text="Rincian Perjalanan"
+                                android:textStyle="bold"
+                                android:textAllCaps="true" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                mutableText="@{viewModel.tripRincian}" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/activity_horizontal_margin">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start"
+                                    android:text="@string/penilaian_personal_shopper"
+                                    android:textStyle="bold"
+                                    android:textAllCaps="true" />
+                                <TextView
+                                    android:id="@+id/btn_reviews"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="end"
+                                    android:text="@string/lihat_semua"
+                                    android:textColor="@color/textColorTertiary" />
+                            </LinearLayout>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rating_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                            </androidx.recyclerview.widget.RecyclerView>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                mutableVisibility="@{viewModel.buttonVisibility}">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:id="@+id/btn_chat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_speech_balloon_chat_white"
+                    android:text="@string/chat_personal_shopper" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    style="@style/Widget.MaterialComponents.Button.Icon"
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_tick_white"
+                    android:text="@string/request_personal_shopper" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

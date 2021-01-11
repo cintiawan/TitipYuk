@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="xyz.cintiawan.titipyuk.ui.user.profile.setting.SettingProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:civ_border_width="1dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/very_large"
+                android:layout_marginStart="@dimen/edittext_margin"
+                android:layout_marginEnd="@dimen/edittext_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textColor="@color/textColorTertiary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_name"
+                    mutableErrorValidate="@{viewModel.nameError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No. Telepon"
+                    android:textColor="@color/textColorTertiary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_phone_number"
+                    mutableErrorValidate="@{viewModel.phoneNumberError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="phone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat Lengkap"
+                    android:textColor="@color/textColorTertiary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_address"
+                    mutableErrorValidate="@{viewModel.addressError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textMultiLine"
+                        android:lines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi"
+                    android:textColor="@color/textColorTertiary"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/edittext_margin"
+                    android:hint="@string/hint_address"
+                    mutableErrorValidate="@{viewModel.descriptionError}">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingStart="@dimen/edittext_margin"
+                        android:paddingEnd="@dimen/edittext_margin"
+                        android:paddingBottom="@dimen/edittext_padding"
+                        android:inputType="textMultiLine"
+                        android:lines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btn_registrasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/konfirmasi"
+                    mutableEnable="@{viewModel.buttonEnable}" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>
